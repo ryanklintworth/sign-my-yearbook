@@ -1,2 +1,1 @@
-# sign-my-yearbook
-yearbook
+Sign My Yearbook
