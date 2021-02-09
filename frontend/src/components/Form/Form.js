@@ -1,10 +1,92 @@
-import React from 'react';
+import React, { useState } from 'react';
 import useStyles from './styles';
+import { TextField, Button, Typography, Paper } from '@material-ui/core';
+import FileBase from 'react-file-base64';
+import { useDispatch } from 'react-redux';
+import { createPost } from '../../actions/posts';
 
 const Form = () => {
+  const [postData, setPostData] = useState({
+    creator: '',
+    title: '',
+    message: '',
+    tags: '',
+    selectedFile: '' 
+  })
   const classes = useStyles();
+  const dispatch = useDispatch();
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    dispatch(createPost(postData));
+  }
+
+  const clear = () => {
+
+  }
+
   return (
-    <h1>FORM</h1>
+    <Paper className={classes.paper}>
+      <form autoComplete="off" noValidate className={`${classes.root} ${classes.form}`} onSubmit={handleSubmit}>
+      <Typography variant="h6">Sign My Yearbook</Typography>
+      <TextField 
+        name="creator" 
+        variant="outlined"
+        label="Creator"  
+        fullWidth
+        value={postData.creator} 
+        onChange={(event) => setPostData({ ...postData, creator: event.target.value })}
+       />
+      <TextField 
+        name="title" 
+        variant="outlined"
+        label="Title" 
+        fullWidth
+        value={postData.title}
+        onChange={(event) => setPostData({ ...postData, title: event.target.value })}
+       />
+      <TextField 
+        name="message" 
+        variant="outlined"
+        label="Message" 
+        fullWidth
+        value={postData.message}
+        onChange={(event) => setPostData({ ...postData, message: event.target.value })}
+       />
+      <TextField 
+        name="tags" 
+        variant="outlined"
+        label="Tags"  
+        fullWidth
+        value={postData.tags} 
+        onChange={(event) => setPostData({ ...postData, tags: event.target.value })}
+       />
+      <div className={classes.fileInput}>
+        <FileBase
+          type="file"
+          multiple={false}
+          onDone={({base64}) => setPostData({ ...postData, selectedFile: base64 })}
+        />
+      </div>
+      <Button 
+        className={classes.buttonSubmit}
+        variant="outlined"
+        color="primary"
+        size="large"
+        type="submit"
+        fullWidth>
+          SUBMIT
+      </Button>
+      <Button
+        variant="outlined"
+        color="secondary"
+        size="large"
+        onClick={clear}
+        fullWidth>
+        CLEAR
+      </Button>
+      </form>
+    </Paper>
   )
 }
 
