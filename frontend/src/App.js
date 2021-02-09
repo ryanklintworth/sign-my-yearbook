@@ -1,6 +1,8 @@
 import React from 'react';
 import { Container, AppBar, Typography, Grow, Grid } from '@material-ui/core';
 import yearbook from './images/yearbook-logo.png';
+import Posts from './components/Posts/Posts';
+import Form from './components/Form/Form';
 
 const App = () => {
   return (
@@ -17,6 +19,7 @@ const App = () => {
             </Grid>
             <Grid item xs={12} sm={4}>
               <Form />
+            </Grid>
           </Grid>
         </Container>
       </Grow>
