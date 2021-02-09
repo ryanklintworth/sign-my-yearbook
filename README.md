@@ -1,6 +1,6 @@
 # Sign My Yearbook
 
-<img src="GA-YB.png" style="width:350px">
+<img src="GA-YB.png" style="width:150px">
 
 ### I've created an application for my fellow software engineering graduates to digital "sign my yearbook"
  
