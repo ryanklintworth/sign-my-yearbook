@@ -17,19 +17,19 @@ const Post = ({ post, setCurrentId }) => {
         <Typography style={{color: 'white'}} variant="h6">{post.creator}</Typography>
       </div>
       <div className={classes.overlay2}>
-        <Button style={{color: 'black'}} size="small" onClick={() => setCurrentId(post._id)}>
-          <MoreHorizIcon fontSize="large"/>
+        <Button style={{color: 'white'}} size="small" onClick={() => setCurrentId(post._id)}>
+          <MoreHorizIcon fontSize="default"/>
         </Button>
       </div>
       <div className={classes.details}>
         <CardContent>
           <Typography className={classes.title} variant="h6" color="textSecondary" gutterBottom>{post.message}</Typography>
         </CardContent>
-        <CardActions>
+        {/* <CardActions>
           <Button size="small" color="inherit" onClick={() => dispatch(deletePost(post._id))}>
             <DeleteForeverIcon fontSize="small" />
           </Button>
-        </CardActions>
+        </CardActions> */}
       </div>
     </Card>
   )

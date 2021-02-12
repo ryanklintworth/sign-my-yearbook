@@ -13,7 +13,7 @@ const Form = ({ currentId, setCurrentId }) => {
     message: '',
     selectedFile: '' 
   })
-  const post = useSelector((state) => currentId ? state.posts.find((post) => post._id === currentId) : null)
+  const post = useSelector((state) => currentId ? state.posts.find((p) => p._id === currentId) : null)
   const classes = useStyles();
   const dispatch = useDispatch();
 
@@ -22,7 +22,7 @@ const Form = ({ currentId, setCurrentId }) => {
   }, [post]);
 
   const clear = () => {
-    setCurrentId(0);
+    setCurrentId(null);
     setPostData({ creator: '', message: '', selectedFile: '' });
   };
 
@@ -31,12 +31,11 @@ const Form = ({ currentId, setCurrentId }) => {
 
     if (currentId === 0) {
       dispatch(createPost(postData));
-      
+      clear();
     } else {
       dispatch(updatePost(currentId, postData));
-      
+      clear();
     }
-    clear();
   };
 
   return (
@@ -56,6 +55,7 @@ const Form = ({ currentId, setCurrentId }) => {
         variant="outlined"
         label="Sign My Yearbook" 
         fullWidth
+        multiline rows={4}
         value={postData.message}
         onChange={(event) => setPostData({ ...postData, message: event.target.value })}
        />
