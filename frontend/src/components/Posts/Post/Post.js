@@ -7,8 +7,8 @@ import { useDispatch } from 'react-redux';
 import { deletePost } from '../../../actions/posts'
 
 const Post = ({ post, setCurrentId }) => {
-  const classes = useStyles();
   const dispatch = useDispatch();
+  const classes = useStyles();
 
   return (
     <Card className={classes.card}>
@@ -25,11 +25,11 @@ const Post = ({ post, setCurrentId }) => {
         <CardContent>
           <Typography variant="h6" color="textSecondary" gutterBottom>{post.message}</Typography>
         </CardContent>
-        <CardActions>
+        {/* <CardActions>
           <Button size="small" color="inherit" onClick={() => dispatch(deletePost(post._id))}>
             <DeleteForeverIcon fontSize="small" />
           </Button>
-        </CardActions>
+        </CardActions> */}
       </div>
     </Card>
   )
