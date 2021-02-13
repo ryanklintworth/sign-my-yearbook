@@ -23,7 +23,7 @@ const Post = ({ post, setCurrentId }) => {
       </div>
       <div className={classes.details}>
         <CardContent>
-          <Typography className={classes.title} variant="h6" color="textSecondary" gutterBottom>{post.message}</Typography>
+          <Typography variant="h6" color="textSecondary" gutterBottom>{post.message}</Typography>
         </CardContent>
         <CardActions>
           <Button size="small" color="inherit" onClick={() => dispatch(deletePost(post._id))}>
