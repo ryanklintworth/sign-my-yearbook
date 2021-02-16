@@ -25,11 +25,11 @@ const Post = ({ post, setCurrentId }) => {
         <CardContent>
           <Typography variant="h6" color="textSecondary" gutterBottom>{post.message}</Typography>
         </CardContent>
-        {/* <CardActions>
+        <CardActions>
           <Button size="small" color="inherit" onClick={() => dispatch(deletePost(post._id))}>
             <DeleteForeverIcon fontSize="small" />
           </Button>
-        </CardActions> */}
+        </CardActions>
       </div>
     </Card>
   )
