@@ -27,7 +27,7 @@ const Post = ({ post, setCurrentId }) => {
         </CardContent>
         <CardActions>
           <Button size="small" color="inherit" onClick={() => dispatch(deletePost(post._id))}>
-            <DeleteForeverIcon fontSize="large" />
+            <DeleteForeverIcon fontSize="small" />
           </Button>
         </CardActions>
       </div>
