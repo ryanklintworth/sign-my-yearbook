@@ -1,5 +1,5 @@
 # <div align="center">Sign My Yearbook</div>
-#### https://sign-my-yearbook.netlify.app/
+#### <div align="center">https://sign-my-yearbook.netlify.app/</div>
 
  <img src="GA-YB.png" />
 
